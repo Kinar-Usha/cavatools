@@ -2,7 +2,9 @@
 #  Copyright (c) 2021 Peter Hsu.  All Rights Reserved.  See LICENCE file for details.
 #
 ifndef RVTOOLS
-RVTOOLS := /opt/riscv-tools
+# RVTOOLS := /home/kinar/RISCV
+RVTOOLS:=/opt/riscv-tools
+
 endif
 ifndef CAVA
 CAVA := $(HOME)

@@ -1,4 +1,49 @@
 # cavatools
+
+    mkdir RISCV
+    cd RISCV
+    export RISCV=/path/from/home/to/RISCV
+    export PATH=$PATH:$RISCV/bin
+
+    git clone riscv-gnu-toolchain (large size 3gb src)
+    git clone riscv-isa-sim
+    git clone riscv-pk
+    git clone riscv-opcodes
+
+    cd riscv-gnu-toolchain
+    mkdir build
+    cd build
+    ../configure --prefix=$RISCV
+    make (add -j3 for faster compilation)
+    make install
+
+
+    cd riscv-isa-sim
+    git branch branchname commithash
+    git checkout branchname
+    mkdir build
+    cd build
+    ../configure --prefix=$RISCV --enable-histogram
+    make 
+    make install
+
+    cd riscv-pk
+    mkdir build
+    cd build
+    ../configure --prefix=$RISCV --host=riscv64-unknown-elf
+    make 
+    make install
+
+    clone cavatools
+    set RVTOOLS to RISCV
+    mkdir bin and lib in $CAVA directory
+    
+    
+    cd cavatools 
+    make install
+
+
+    
 RISC-V instruction set simulator and performance analysis tools
 ===============================================================
 
@@ -11,8 +56,8 @@ Cavatools simulates a multi-core RISC-V machine.  The simulator runs on X86 Linu
 
 Environment variable RVTOOLS should be path to the riscv-tools tree.  The subtrees are:
 
-    riscv-tools/riscv-opcodes       [from https://github.com/riscv/riscv-opcodes]
-    riscv-tools/riscv-isa-sim       [from https://github.com/riscv-software-src/riscv-isa-sim]
+    riscv-tools/riscv-opcodes       [from https://github.com/riscv/riscv-opcodes commit-hash  21b508e]
+    riscv-tools/riscv-isa-sim       [from https://github.com/riscv-software-src/riscv-isa-sim commit-hash 641d7d03e6a8d822b720fcb1a19f261813c00c4a]
     riscv-tools/riscv-pk            [from https://github.com/riscv-software-src/riscv-pk]
     riscv-tools/riscv-gnu-toolchain [from https://github.com/riscv-collab/riscv-gnu-toolchain]
 

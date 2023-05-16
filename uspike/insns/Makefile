@@ -1,7 +1,12 @@
 #  Copyright (c) 2021 Peter Hsu.  All Rights Reserved.  See LICENCE file for details.
 
 # Paths to riscv-tools build directories on local system
-RVTOOLS := /opt/riscv-tools
+# RVTOOLS := /home/kinar/RISCV
+ifndef RVTOOLS
+RVTOOLS:=/opt/riscv-tools
+endif
+
+
 B := $(RVTOOLS)/riscv-isa-sim
 I :=  -I$B/build -I$B/riscv -I$B/fesvr -I$B/softfloat -I$B/riscv/insns
 
