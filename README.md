@@ -21,7 +21,6 @@
     cd build
     ../configure --prefix=$RISCV
     make (add -j3 for faster compilation)
-    make install
 
 
     cd riscv-isa-sim
